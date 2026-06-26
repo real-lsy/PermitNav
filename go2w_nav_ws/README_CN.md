@@ -393,17 +393,6 @@ cd ~/go2w_nav_ws
 source install/setup.bash
 ```
 
-11建议写入环境变量：
-
-```bash
-echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-echo "source $HOME/go2w_nav_ws/install/setup.bash" >> ~/.bashrc
-echo "export ROS_DOMAIN_ID=30" >> ~/.bashrc
-echo "export LD_LIBRARY_PATH=$HOME/go2w_nav_ws/third_party/unitree_sdk2/install/lib:\$LD_LIBRARY_PATH" >> ~/.bashrc
-
-source ~/.bashrc
-```11
-
 检查编译结果：
 
 ```bash
