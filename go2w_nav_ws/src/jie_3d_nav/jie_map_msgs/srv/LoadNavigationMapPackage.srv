@@ -1,0 +1,5 @@
+string package_path
+---
+bool success
+string message
+string map_id

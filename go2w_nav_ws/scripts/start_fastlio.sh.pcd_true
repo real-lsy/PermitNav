@@ -1,0 +1,28 @@
+#!/bin/bash
+#打开pcd保存
+# sed -i 's/pcd_save_en:[[:space:]]*false/pcd_save_en: true/g' \
+# ~/go2w_nav_ws/src/FAST_LIO_ROS2/config/mid360_nuc_mapping.yaml
+
+# sed -i 's/pcd_save_en:[[:space:]]*false/pcd_save_en: true/g' \
+# ~/go2w_nav_ws/install/fast_lio/share/fast_lio/config/mid360_nuc_mapping.yaml
+
+source /opt/ros/humble/setup.bash
+source ~/go2w_nav_ws/install/setup.bash
+
+export ROS_DOMAIN_ID=30
+
+MAP_TIME=$(date +"%Y%m%d_%H%M%S")
+MAP_DIR="$HOME/go2w_nav_ws/maps/fastlio_${MAP_TIME}"
+
+mkdir -p "$MAP_DIR"
+
+# FAST-LIO 源码里写死保存到 ROOT_DIR/PCD/
+# 这里把 PCD 做成软链接，实际指向 maps 下的时间戳目录
+rm -rf "$HOME/go2w_nav_ws/src/FAST_LIO_ROS2/PCD"
+ln -s "$MAP_DIR" "$HOME/go2w_nav_ws/src/FAST_LIO_ROS2/PCD"
+
+echo "Starting FAST-LIO with MID360 config..."
+echo "ROS_DOMAIN_ID=$ROS_DOMAIN_ID"
+echo "PCD will be saved to: $MAP_DIR"
+
+ros2 launch fast_lio mapping.launch.py config_file:=mid360_nuc_mapping.yaml rviz:=false

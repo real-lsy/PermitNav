@@ -1,0 +1,44 @@
+relocalization_bin_file: /home/firefly/ros2_ws/src/odin_ros_driver/map/home/map_20260423_125219.bin
+relocalization_pcd_file: /home/firefly/ros2_ws/src/odin_ros_driver/map/home/Relocation_Map_05.pcd
+map_package_dir: /home/firefly/maps/home
+show_rviz: false
+show_map_gui: false
+publish_d1_odom: false
+use_static_odom_to_base: true
+
+d1_controller:
+  ros__parameters:
+    # Path tracking geometry.
+    robot_center_offset_frame: odin1_base_link
+    robot_center_offset_x: -0.18
+    robot_center_offset_y: 0.0
+    robot_center_offset_z: 0.0
+    tracking_point_reached_xy_tolerance: 0.40
+    tracking_point_marker_scale: 0.28
+
+    # OpenCV top-down debug view.
+    enable_tracking_debug_view: true
+    tracking_debug_view_size_px: 640
+    tracking_debug_view_pixels_per_meter: 80.0
+    tracking_debug_view_frequency: 10.0
+
+    # Speed tracking gains.
+    linear_gain: 1.0
+    lateral_gain: 0.8
+    heading_gain: 0.8
+    cross_track_angular_gain: 0.5
+    final_yaw_gain: 0.3
+
+    # Motion mode and limits.
+    enable_lateral_motion: true
+    max_linear_speed: 0.7
+    max_lateral_speed: 0.5
+    max_angular_speed: 0.9
+
+    # Deadbands and goal tolerances.
+    align_final_yaw: true
+    linear_deadband: 0.05
+    lateral_deadband: 0.05
+    angular_deadband: 0.05
+    goal_position_tolerance: 0.1
+    goal_yaw_tolerance: 0.2

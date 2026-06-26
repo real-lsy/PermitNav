@@ -1,0 +1,18 @@
+---
+bool success
+string message
+string map_id
+string frame_id
+float64 resolution
+geometry_msgs/Point min_bound
+geometry_msgs/Point max_bound
+float64 robot_radius
+int32 snap_search_radius_cells
+bool require_ground_support
+bool strict_direct_ground_support
+int32 ground_support_xy_radius_cells
+int32 ground_support_depth_cells
+bool enable_preblocked_costmap
+int32 preblocked_costmap_radius_cells
+float64 preblocked_costmap_weight
+string source_world_file

@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+WS="${GO2W_NAV_WS:-$HOME/go2w_nav_ws}"
+
+source /opt/ros/humble/setup.bash
+source "$WS/install/setup.bash"
+export ROS_DOMAIN_ID=30
+
+python3 "$WS/scripts/localization_to_base_link_tf.py"

@@ -1,0 +1,6 @@
+string package_path
+bool overwrite
+---
+bool success
+string message
+string manifest_path

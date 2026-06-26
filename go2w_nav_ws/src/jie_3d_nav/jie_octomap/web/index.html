@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>OctoMap Web Planner Voxel V41</title>
+    <link rel="stylesheet" href="./styles.css?v=41" />
+    <script src="./vendor/roslib.min.js?v=41"></script>
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="panel">
+        <div class="layer-toggles">
+          <label><input id="toggle-occupied" type="checkbox" checked /> 占据</label>
+          <label><input id="toggle-traversable" type="checkbox" /> 可通行</label>
+          <label><input id="toggle-preblocked" type="checkbox" /> 禁行</label>
+          <label><input id="toggle-risk" type="checkbox" /> 代价</label>
+        </div>
+        <button id="reset-view-btn" type="button" class="secondary">重置视角</button>
+
+        <div class="panel-actions">
+          <div id="relocalization-status" class="relocalization-status fail">机器人尚未定位</div>
+          <button id="set-navigate-btn" type="button" class="secondary action-btn">导航目标</button>
+          <button id="set-start-btn" type="button" class="secondary action-btn">起始点</button>
+          <button id="set-goal-btn" type="button" class="secondary action-btn">目标点</button>
+        </div>
+
+        <button id="stop-navigation-btn" type="button" class="danger-stop">停止导航</button>
+        <div class="joystick-card" aria-label="手动运动控制">
+          <div class="joystick-title">手动控制</div>
+          <div id="motion-joystick" class="joystick-pad">
+            <div class="joystick-cross horizontal"></div>
+            <div class="joystick-cross vertical"></div>
+            <div id="motion-joystick-knob" class="joystick-knob"></div>
+          </div>
+          <div class="rotation-control">
+            <label for="manual-rotation-slider">原地旋转</label>
+            <input id="manual-rotation-slider" type="range" min="-100" max="100" value="0" />
+          </div>
+          <div id="manual-velocity-display" class="manual-velocity-display">x=0.000 y=0.000 wz=0.000</div>
+        </div>
+        <button id="reconnect-btn" type="button" class="secondary">重新连接</button>
+
+        <details id="advanced-settings" class="advanced">
+          <summary>高级设置</summary>
+          <label class="field">
+            <span>ROSBridge 地址</span>
+            <input id="ws-url" type="text" value="" />
+          </label>
+          <button id="connect-btn" type="button">使用自定义地址连接</button>
+        </details>
+
+        <div class="status-block">
+          <div><strong>版本：</strong> <span id="web-version">Voxel V41</span></div>
+          <div><strong>连接：</strong> <span id="conn-status">未连接</span></div>
+          <div><strong>机器人TF：</strong> <span id="robot-tf-status">未解析</span></div>
+          <div><strong>选点：</strong> <span id="selection-status">等待连接。</span></div>
+          <div><strong>地图：</strong> <span id="map-status">尚未加载栅格。</span></div>
+        </div>
+
+        <ul class="legend">
+          <li><span class="swatch occupied"></span> 占据栅格</li>
+          <li><span class="swatch start"></span> 可通行栅格</li>
+          <li><span class="swatch preblocked"></span> 禁行栅格</li>
+          <li><span class="swatch robot"></span> 机器人</li>
+          <li><span class="swatch path"></span> 规划路径</li>
+          <li><span class="swatch tracking"></span> 当前跟踪点</li>
+          <li><span class="swatch start"></span> 当前姿态</li>
+          <li><span class="swatch goal"></span> 导航目标</li>
+        </ul>
+      </aside>
+
+      <main class="viewport-wrap">
+        <canvas id="viewport"></canvas>
+      </main>
+    </div>
+
+    <div id="navigation-confirm-modal" class="modal-backdrop" hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="navigation-confirm-title">
+        <h2 id="navigation-confirm-title">路径规划完成</h2>
+        <p id="navigation-confirm-message"></p>
+        <div class="modal-actions">
+          <button id="navigation-confirm-start" type="button" class="confirm-start">开始导航</button>
+          <button id="navigation-confirm-cancel" type="button" class="confirm-cancel">只显示路线</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js?v=41"></script>
+  </body>
+</html>
