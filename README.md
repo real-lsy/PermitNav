@@ -1,6 +1,7 @@
 # PermitNav for Go2-W
 
 Language: [中文](go2w_nav_ws/README_CN.md) | English
+
 **PermitNav** is a rapidly integrated 3D navigation demo for **Unitree Go2-W / Go2W**, built with **Livox MID360**, **ROS2 Humble**, **FAST-LIO**, **FAST_LIO_LOCALIZATION2**, **jie_3d_nav**, and **Unitree SDK2**.
 
 The name **PermitNav** comes from the original motivation of this project: building a working real-robot navigation demo in a very short time to prove that the system could run and to earn permission to leave for an internship.
