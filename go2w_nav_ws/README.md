@@ -620,7 +620,7 @@ See the PC-side README for the detailed processing procedure.
 The map processing pipeline is maintained in a separate repository:
 
 ```text
-go2w_nav_pc_ws（coming soon）
+| [PermitNav-go2w_nav_pc_ws](https://github.com/real-lsy/PermitNav-go2w_nav_pc_ws) | 
 ```
 
 The PC-side project is responsible for processing the raw FAST-LIO map generated on the NUC. After mapping, copy the raw `scans.pcd` from the NUC to the PC workspace and process it in `go2w_nav_pc_ws`.
