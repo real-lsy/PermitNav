@@ -677,7 +677,7 @@ cat ~/go2w_nav_ws/scripts/start_fast_lio_localization2.sh
 应指向：
 
 ```bash
-/home/luo/go2w_nav_ws/maps/localization/big_localization_raw.pcd
+～/go2w_nav_ws/maps/localization/big_localization_raw.pcd
 ```
 
 检查 jie_3d_nav 地图参数：
@@ -689,7 +689,7 @@ cat ~/go2w_nav_ws/src/jie_3d_nav/octo_planner/config/nav_params.yaml
 应指向：
 
 ```bash
-/home/luo/go2w_nav_ws/maps/jie_maps/<导出的地图文件夹>
+～/go2w_nav_ws/maps/jie_maps/<导出的地图文件夹>
 ```
 
 注意：
