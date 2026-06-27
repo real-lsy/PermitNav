@@ -576,9 +576,7 @@ PC 端负责：
 
 地图处理流程维护在另一个独立项目中：
 
-```text
-go2w_nav_pc_ws（coming soon）
-```
+| [PermitNav-go2w_nav_pc_ws](https://github.com/real-lsy/PermitNav-go2w_nav_pc_ws) | 
 
 PC 端项目负责处理 NUC 上由 FAST-LIO 扫描生成的原始点云地图。建图完成后，需要将 NUC 端生成的原始 `scans.pcd` 拷贝到 PC 工作区，并在 `go2w_nav_pc_ws` 中完成地图处理。
 
