@@ -1150,3 +1150,13 @@ Stop motion:
 ```bash
 ros2 topic pub --once /go2w_cmd_enable std_msgs/msg/Bool "{data: false}"
 ```
+
+## License
+
+This repository is released under the Apache License, Version 2.0.
+
+The Apache License 2.0 applies only to the original integration code, scripts, configuration files, bridge nodes, and documentation created for PermitNav.
+
+Third-party source code included in this repository, such as FAST-LIO, FAST_LIO_LOCALIZATION, FAST_LIO_ROS2, livox_ros_driver2, Livox-SDK2, jie_3d_nav, unitree_sdk2, and OctoMap-related components, remains governed by its original upstream license.
+
+Users must check and comply with the corresponding upstream licenses before redistribution, modification, or commercial use.
