@@ -1090,3 +1090,12 @@ ros2 topic pub --once /go2w_cmd_enable std_msgs/msg/Bool "{data: true}"
 ros2 topic pub --once /go2w_cmd_enable std_msgs/msg/Bool "{data: false}"
 ```
 
+## 开源协议
+
+本仓库采用 Apache License, Version 2.0 开源。
+
+Apache License 2.0 仅适用于 PermitNav 自行编写的集成代码、脚本、配置文件、桥接节点和文档。
+
+本仓库中包含的第三方源码，例如 FAST-LIO、FAST_LIO_LOCALIZATION、FAST_LIO_ROS2、livox_ros_driver2、Livox-SDK2、jie_3d_nav、unitree_sdk2 以及 OctoMap 相关组件，仍然遵循其各自的上游开源协议。
+
+使用、修改、再分发或商业使用前，请自行检查并遵守对应项目的许可证要求。
