@@ -8,9 +8,6 @@ The name **PermitNav** comes from the original motivation of this project: build
 
 This project is mainly intended to achieve a basic 3D navigation pipeline on a real Go2-W robot. It is an engineering integration project rather than a from-scratch navigation framework. This project is only meant to achieve a basic 3D navigation demo. My main focus is locomotion, and I have not worked much on navigation before. If bugs appear, restarting the system is probably the best first solution.
 
-Video：
-【【开源】PermitNav，缝合速成的一种全局3d导航】 https://www.bilibili.com/video/BV12Y7j6iEHi/?share_source=copy_web&vd_source=b5c22f93b0d2fd36b1d6203208bd650b
-
 The NUC side is responsible for:
 
 ```text
